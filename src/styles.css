@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap'
+);
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  font-family: 'Inter', sans-serif;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  margin-top: 0;
+}
+
+button,
+input,
+textarea,
+select {
+
+  font-family: inherit;
+}
+
+img {
+
+  max-width: 100%;
+
+  display: block;
+}
+
+.container {
+
+  width: min(
+    1200px,
+    calc(100% - 40px)
+  );
+
+  margin: auto;
+}
+
+.section {
+
+  padding: 100px 0;
+}
+
+.text-center {
+
+  text-align: center;
+}
+
+.gradient-text {
+
+  background: linear-gradient(
+    90deg,
+    #6d28d9,
+    #2563eb
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+}
