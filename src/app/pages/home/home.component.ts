@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+
   activeSolution = 0;
 
   solutions = [
@@ -126,7 +127,10 @@ export class HomeComponent implements OnInit {
     this.activeSolution = index;
   }
 
-  ngOnInit() {
+  getActiveSolution() {
+    return this.solutions[this.activeSolution];
   }
 
+  ngOnInit() {
+  }
 }
