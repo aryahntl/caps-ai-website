@@ -1,62 +1,992 @@
-<header class="navbar">
+<header
+  class="caps-navbar"
+  [class.is-scrolled]="isScrolled"
+>
 
-  <div class="container navbar-inner">
+  <div class="navbar-shell">
 
-    <!-- Logo -->
-    <a routerLink="/" class="logo">
-      <span class="logo-icon">C</span>
-      <span class="logo-text">CAPS<span>-AI</span></span>
+
+    <!-- =====================================================
+         LOGO
+         ===================================================== -->
+
+    <a
+      routerLink="/"
+      class="caps-logo"
+      (click)="closeMobileMenu()"
+      aria-label="CAPS-AI Home"
+    >
+
+      <img
+        src="assets/caps-ai-logo.png"
+        alt="CAPS-AI"
+      />
+      <span > <b>CAPS-AI</b></span>
+
     </a>
 
 
-    <!-- Desktop Navigation -->
-    <nav class="nav-links">
+    <!-- =====================================================
+         DESKTOP NAVIGATION
+         ===================================================== -->
 
-      <a routerLink="/platform">
-        Platform
+    <nav
+      class="desktop-nav"
+      aria-label="Main navigation"
+    >
+
+
+      <!-- PLATFORM -->
+
+      <a
+        routerLink="/platform"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+
+        <span>Platform</span>
+
       </a>
 
-      <a routerLink="/industries">
+
+      <!-- ===================================================
+           SOLUTIONS
+           =================================================== -->
+
+      <div
+        class="nav-dropdown"
+        [class.dropdown-open]="isSolutionsOpen"
+      >
+
+        <button
+          type="button"
+          class="nav-link-button"
+          (click)="toggleSolutions()"
+          aria-haspopup="true"
+          [attr.aria-expanded]="isSolutionsOpen"
+        >
+
+          <span>Solutions</span>
+
+          <svg
+            class="chevron-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M6 9l6 6 6-6"
+            />
+
+          </svg>
+
+        </button>
+
+
+        <!-- MEGA MENU -->
+
+        <div class="solutions-mega-menu">
+
+
+          <!-- LEFT INTRO -->
+
+          <div class="mega-intro">
+
+            <span class="mega-eyebrow">
+              CAPS-AI SOLUTIONS
+            </span>
+
+
+            <h3>
+              Everything your
+              business needs.
+            </h3>
+
+
+            <p>
+              Connect customers, operations,
+              sales and intelligent automation
+              in one platform.
+            </p>
+
+
+            <a
+              routerLink="/platform"
+              (click)="closeSolutions()"
+              class="mega-explore"
+            >
+
+              Explore platform
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                />
+
+              </svg>
+
+            </a>
+
+          </div>
+
+
+          <!-- SOLUTIONS -->
+
+          <div class="mega-solutions">
+
+
+            <!-- CRM -->
+
+            <a
+              routerLink="/platform/crm"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon crm-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                  />
+
+                  <circle
+                    cx="9"
+                    cy="7"
+                    r="4"
+                  />
+
+                  <path
+                    d="M22 21v-2a4 4 0 0 0-3-3.87"
+                  />
+
+                  <path
+                    d="M16 3.13a4 4 0 0 1 0 7.75"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  CRM
+                </strong>
+
+                <small>
+                  Leads & relationships
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- SUPPORT -->
+
+            <a
+              routerLink="/platform/technical-support"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon support-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M3 18v-6a9 9 0 0 1 18 0v6"
+                  />
+
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1"
+                  />
+
+                  <path
+                    d="M3 19a2 2 0 0 0 2 2h1"
+                  />
+
+                  <path
+                    d="M7 16h2v4H7z"
+                  />
+
+                  <path
+                    d="M15 16h2v4h-2z"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  Technical Support
+                </strong>
+
+                <small>
+                  Smart ticket management
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- FEEDBACK -->
+
+            <a
+              routerLink="/platform/feedback"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon feedback-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8
+                       8.5 8.5 0 0 1-7.6 4.7
+                       8.38 8.38 0 0 1-3.8-.9
+                       L3 21l1.9-5.7
+                       A8.38 8.38 0 0 1 4 11.5
+                       8.5 8.5 0 1 1 21 11.5z"
+                  />
+
+                  <path
+                    d="M8 12h.01M12 12h.01M16 12h.01"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  Feedback
+                </strong>
+
+                <small>
+                  Customer intelligence
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- VISITOR -->
+
+            <a
+              routerLink="/platform/visitor-management"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon visitor-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="4"
+                  />
+
+                  <path
+                    d="M4 21a8 8 0 0 1 16 0"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  Visitor Management
+                </strong>
+
+                <small>
+                  Secure visitor tracking
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+              routerLink="/platform/inventory"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon inventory-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M21 8l-9-5-9 5 9 5 9-5z"
+                  />
+
+                  <path
+                    d="M3 8v8l9 5 9-5V8"
+                  />
+
+                  <path
+                    d="M12 13v8"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  Inventory
+                </strong>
+
+                <small>
+                  Real-time stock control
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- POS -->
+
+            <a
+              routerLink="/platform/pos"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon pos-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <rect
+                    x="3"
+                    y="4"
+                    width="18"
+                    height="16"
+                    rx="2"
+                  />
+
+                  <path
+                    d="M7 8h10M7 12h4M7 16h2"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  POS
+                </strong>
+
+                <small>
+                  Fast & secure billing
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- AI ATTENDANCE -->
+
+            <a
+              routerLink="/platform/ai-attendance"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon attendance-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="8"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                  />
+
+                  <path
+                    d="M8.5 16a5 5 0 0 1 7 0"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  AI Attendance
+                </strong>
+
+                <small>
+                  Intelligent workforce
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- IPOD -->
+
+            <a
+              routerLink="/platform/ipod"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon ipod-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M5 4h14v16H5z"
+                  />
+
+                  <path
+                    d="M8 8h8M8 12h5"
+                  />
+
+                  <path
+                    d="M15 16l2 2 4-4"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  IPOD
+                </strong>
+
+                <small>
+                  Proof of delivery
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- BILL AUTOMATION -->
+
+            <a
+              routerLink="/platform/ai-bill-automation"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon automation-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M6 3h9l4 4v14H6z"
+                  />
+
+                  <path
+                    d="M14 3v5h5"
+                  />
+
+                  <path
+                    d="M9 12h6M9 16h4"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  AI Bill Automation
+                </strong>
+
+                <small>
+                  Intelligent invoice processing
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+
+            <!-- eKYC -->
+
+            <a
+              routerLink="/platform/ekyc"
+              class="mega-item"
+              (click)="closeSolutions()"
+            >
+
+              <span class="mega-icon ekyc-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M12 3l7 3v5c0 4.5-3 8-7 10
+                       -4-2-5-5.5-5-10V6z"
+                  />
+
+                  <path
+                    d="M9 12l2 2 4-4"
+                  />
+
+                </svg>
+
+              </span>
+
+
+              <span class="mega-item-content">
+
+                <strong>
+                  eKYC
+                </strong>
+
+                <small>
+                  Secure identity verification
+                </small>
+
+              </span>
+
+
+              <span class="mega-arrow">
+                →
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- INDUSTRIES -->
+
+      <a
+        routerLink="/industries"
+        routerLinkActive="active-link"
+      >
+
         Industries
+
       </a>
 
-      <a routerLink="/pricing">
+
+      <!-- PRICING -->
+
+      <a
+        routerLink="/pricing"
+        routerLinkActive="active-link"
+      >
+
         Pricing
+
       </a>
 
-      <a routerLink="/blog">
+
+      <!-- RESOURCES -->
+
+      <a
+        routerLink="/blog"
+        routerLinkActive="active-link"
+      >
+
         Resources
-      </a>
 
-      <a routerLink="/about">
-        About
       </a>
 
     </nav>
 
 
-    <!-- Actions -->
-    <div class="nav-actions">
+    <!-- =====================================================
+         DESKTOP ACTIONS
+         ===================================================== -->
 
-      <a routerLink="/contact" class="login-link">
-        Contact
+    <div class="navbar-actions">
+
+      <a
+        routerLink="/contact"
+        class="contact-link"
+      >
+
+        Contact Sales
+
       </a>
 
-      <a routerLink="/contact" class="demo-button">
-        Request Demo
+
+      <a
+        routerLink="/contact"
+        class="navbar-cta"
+      >
+
+        <span>
+          Get Started
+        </span>
+
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path
+            d="M5 12h14"
+          />
+
+          <path
+            d="M13 6l6 6-6 6"
+          />
+
+        </svg>
+
       </a>
 
     </div>
 
 
-    <!-- Mobile button -->
-    <button
-      class="mobile-menu-button"
-      type="button">
+    <!-- =====================================================
+         MOBILE BUTTON
+         ===================================================== -->
 
-      ☰
+    <button
+      type="button"
+      class="mobile-menu-button"
+      [class.is-open]="isMobileMenuOpen"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Toggle navigation"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
 
     </button>
+
+  </div>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+       ======================================================= -->
+
+  <div
+    class="mobile-menu"
+    [class.is-open]="isMobileMenuOpen"
+  >
+
+    <div class="mobile-menu-inner">
+
+
+      <a
+        routerLink="/platform"
+        class="mobile-nav-link"
+        (click)="closeMobileMenu()"
+      >
+
+        <span>Platform</span>
+
+        <span>→</span>
+
+      </a>
+
+
+      <!-- MOBILE SOLUTIONS -->
+
+      <div class="mobile-solutions">
+
+        <button
+          type="button"
+          class="mobile-nav-link mobile-solutions-trigger"
+          (click)="toggleSolutions()"
+          [attr.aria-expanded]="isSolutionsOpen"
+        >
+
+          <span>Solutions</span>
+
+          <span
+            class="mobile-plus"
+            [class.rotated]="isSolutionsOpen"
+          >
+            +
+          </span>
+
+        </button>
+
+
+        <div
+          class="mobile-solution-list"
+          [class.is-open]="isSolutionsOpen"
+        >
+
+          <a
+            routerLink="/crm"
+            (click)="closeMobileMenu()"
+          >
+            CRM
+          </a>
+
+          <a
+            routerLink="/technical-support"
+            (click)="closeMobileMenu()"
+          >
+            Technical Support
+          </a>
+
+          <a
+            routerLink="/feedback"
+            (click)="closeMobileMenu()"
+          >
+            Feedback
+          </a>
+
+          <a
+            routerLink="/visitor-management"
+            (click)="closeMobileMenu()"
+          >
+            Visitor Management
+          </a>
+
+          <a
+            routerLink="/inventory"
+            (click)="closeMobileMenu()"
+          >
+            Inventory
+          </a>
+
+          <a
+            routerLink="/pos"
+            (click)="closeMobileMenu()"
+          >
+            POS
+          </a>
+
+          <a
+            routerLink="/ai-attendance"
+            (click)="closeMobileMenu()"
+          >
+            AI Attendance
+          </a>
+
+          <a
+            routerLink="/ipod"
+            (click)="closeMobileMenu()"
+          >
+            IPOD
+          </a>
+
+          <a
+            routerLink="/ai-bill-automation"
+            (click)="closeMobileMenu()"
+          >
+            AI Bill Automation
+          </a>
+
+          <a
+            routerLink="/ekyc"
+            (click)="closeMobileMenu()"
+          >
+            eKYC
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a
+        routerLink="/industries"
+        class="mobile-nav-link"
+        (click)="closeMobileMenu()"
+      >
+
+        <span>Industries</span>
+
+        <span>→</span>
+
+      </a>
+
+
+      <a
+        routerLink="/pricing"
+        class="mobile-nav-link"
+        (click)="closeMobileMenu()"
+      >
+
+        <span>Pricing</span>
+
+        <span>→</span>
+
+      </a>
+
+
+      <a
+        routerLink="/blog"
+        class="mobile-nav-link"
+        (click)="closeMobileMenu()"
+      >
+
+        <span>Resources</span>
+
+        <span>→</span>
+
+      </a>
+
+
+      <div class="mobile-menu-divider"></div>
+
+
+      <a
+        routerLink="/contact"
+        class="mobile-contact"
+        (click)="closeMobileMenu()"
+      >
+
+        Talk to an Expert
+
+      </a>
+
+
+      <a
+        routerLink="/contact"
+        class="mobile-cta"
+        (click)="closeMobileMenu()"
+      >
+
+        Get Started
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path d="M5 12h14"></path>
+          <path d="M13 6l6 6-6 6"></path>
+
+        </svg>
+
+      </a>
+
+    </div>
 
   </div>
 
