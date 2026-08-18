@@ -1,1 +1,1400 @@
-<p>pricing works!</p>
+<section class="pricing-page">
+
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
+
+  <section class="pricing-hero">
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-brand-line">
+        <span class="brand-mark">CAPS</span>
+        <span class="brand-dot">.</span>
+        <span class="brand-ai">ai</span>
+        <span class="brand-powered">POWERED BY VEDANTA ERP</span>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        SIMPLE • TRANSPARENT • SCALABLE
+      </div>
+
+      <h1>
+        One platform.
+        <span>Five ways to grow.</span>
+      </h1>
+
+      <p>
+        Choose the CAPS-AI package that matches your organisation today.
+        Every package is built around the same business platform and grows with you.
+      </p>
+
+      <div class="hero-trust">
+
+        <span>
+          <b>✓</b>
+          Clear monthly pricing
+        </span>
+
+        <span>
+          <b>✓</b>
+          40 business modules
+        </span>
+
+        <span>
+          <b>✓</b>
+          Upgrade when you grow
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       PLANS
+  ======================================================= -->
+
+  <section class="plans-section">
+
+    <div class="section-container">
+
+      <div class="plans-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            CHOOSE YOUR PACKAGE
+          </span>
+
+          <h2>
+            Find the right level of
+            <span>business capability.</span>
+          </h2>
+
+        </div>
+
+        <div class="plans-heading-copy">
+
+          <p>
+            Start with the package that fits your current needs.
+            Move up as your operations, reporting and teams become more complex.
+          </p>
+
+          <div class="pricing-note">
+            <span class="note-dot"></span>
+            All prices shown are monthly.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK PLAN GUIDE -->
+
+      <div class="plan-guide">
+
+        <div class="guide-label">
+          <span class="guide-number">01</span>
+          <span>START</span>
+        </div>
+
+        <div class="guide-line"></div>
+
+        <div class="guide-label">
+          <span class="guide-number">02</span>
+          <span>MANAGE</span>
+        </div>
+
+        <div class="guide-line"></div>
+
+        <div class="guide-label guide-active">
+          <span class="guide-number">03</span>
+          <span>GROW</span>
+        </div>
+
+        <div class="guide-line"></div>
+
+        <div class="guide-label">
+          <span class="guide-number">04</span>
+          <span>SCALE</span>
+        </div>
+
+        <div class="guide-line"></div>
+
+        <div class="guide-label">
+          <span class="guide-number">05</span>
+          <span>CUSTOMISE</span>
+        </div>
+
+      </div>
+
+
+      <!-- ALL FIVE PLANS — NOTHING REMOVED -->
+
+      <div class="pricing-container">
+
+        <article class="pricing-card" *ngFor="let plan of plans" [class.featured]="plan.featured" [class.selected]="
+            selectedPlan === plan.name
+          ">
+
+          <div class="featured-line" *ngIf="plan.featured"></div>
+
+          <div class="recommended-badge" *ngIf="plan.featured">
+            MOST POPULAR
+          </div>
+
+
+          <!-- CARD TOP -->
+
+          <div class="card-top">
+
+            <div class="plan-title-row">
+
+              <span class="plan-color" [class.startup]="plan.name === 'STARTUP'" [class.sme]="plan.name === 'SME'"
+                [class.growth]="plan.name === 'GROWTH'" [class.enterprise]="plan.name === 'ENTERPRISE'"
+                [class.custom]="plan.name === 'CUSTOM'"></span>
+
+              <span class="plan-eyebrow">
+                {{ plan.eyebrow }}
+              </span>
+
+            </div>
+
+            <div class="plan-name">
+              {{ plan.name }}
+            </div>
+
+            <div class="plan-positioning">
+              {{ plan.positioning }}
+            </div>
+
+          </div>
+
+
+          <!-- PRICE -->
+
+          <div class="plan-price">
+
+            <ng-container *ngIf="plan.name !== 'CUSTOM'">
+
+              <span class="currency-price">
+                {{ plan.price }}
+              </span>
+
+              <span class="price-suffix">
+                {{ plan.priceSuffix }}
+              </span>
+
+            </ng-container>
+
+
+            <ng-container *ngIf="plan.name === 'CUSTOM'">
+
+              <span class="currency-price">
+                ₹{{ getCustomMonthlyPrice() | number:'1.0-0' }}
+              </span>
+
+              <span class="price-suffix">
+                /month
+              </span>
+
+            </ng-container>
+
+          </div>
+
+
+          <!-- IDEAL FOR -->
+
+          <div class="plan-best-for">
+
+            <span class="best-for-label">
+              IDEAL FOR
+            </span>
+
+            <p>
+              {{ plan.bestFor }}
+            </p>
+
+          </div>
+
+
+          <!-- DESCRIPTION -->
+
+          <p class="plan-description">
+            {{ plan.description }}
+          </p>
+
+
+          <!-- MODULE COUNT -->
+
+          <div class="plan-capability-summary">
+
+            <div class="capability-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <ng-container *ngIf="plan.name !== 'CUSTOM'">
+
+                <strong>
+                  {{ getPlanFeatureCount(plan.name) }} / {{ features.length }}
+                </strong>
+
+                <span>
+                  modules included
+                </span>
+
+              </ng-container>
+
+
+              <ng-container *ngIf="plan.name === 'CUSTOM'">
+
+                <strong>
+                  {{ customSelectedModules.length }} selected
+                </strong>
+
+                <span>
+                  modules selected
+                </span>
+
+              </ng-container>
+
+            </div>
+
+          </div>
+
+
+          <!-- CTA -->
+
+          <button type="button" class="plan-button" [class.primary]="plan.featured" [class.selected-button]="
+              selectedPlan === plan.name
+            " (click)="
+              selectPlan(plan)
+            ">
+
+            <span>
+
+              {{
+              selectedPlan === plan.name
+              ? 'Selected'
+              : plan.cta
+              }}
+
+            </span>
+
+            <span class="button-arrow">
+              →
+            </span>
+
+          </button>
+
+
+          <!-- SELECTED -->
+
+          <div class="selected-indicator" *ngIf="
+              selectedPlan === plan.name
+            ">
+
+            <span>✓</span>
+
+            Ready to continue
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+     LEAD FORM POPUP
+======================================================= -->
+
+  <div class="lead-modal-backdrop" *ngIf="showLeadForm" (click)="closeLeadForm()">
+
+    <div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title"
+      (click)="$event.stopPropagation()">
+
+      <!-- HEADER -->
+
+      <div class="lead-modal-header">
+
+        <div>
+
+          <span class="lead-modal-eyebrow">
+            GET STARTED WITH CAPS-AI
+          </span>
+
+          <h2 id="lead-modal-title">
+            Let's build the right
+            <span>solution for you.</span>
+          </h2>
+
+        </div>
+
+
+        <button type="button" class="lead-modal-close" (click)="closeLeadForm()" aria-label="Close">
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- BODY -->
+
+      <div class="lead-modal-body">
+
+
+        <!-- SELECTED PACKAGE -->
+
+        <div class="selected-package-summary">
+
+          <div class="selected-package-left">
+
+            <span>
+              SELECTED PACKAGE
+            </span>
+
+            <strong>
+              {{ selectedPlanData?.name }}
+            </strong>
+
+            <p>
+              {{ selectedPlanData?.positioning }}
+            </p>
+
+          </div>
+
+
+          <div class="selected-package-price">
+
+            <strong>
+              {{ selectedPlanData?.price }}
+            </strong>
+
+            <span>
+              {{ selectedPlanData?.priceSuffix }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form class="lead-form" #leadFormRef="ngForm" novalidate>
+
+          <div class="form-grid">
+
+
+            <!-- NAME -->
+
+            <div class="form-field">
+
+              <label for="lead-name">
+                Full Name <span>*</span>
+              </label>
+
+              <input id="lead-name" type="text" [(ngModel)]="leadForm.name" name="name" placeholder="Enter your name"
+                autocomplete="name" />
+
+            </div>
+
+
+            <!-- ORGANISATION -->
+
+            <div class="form-field">
+
+              <label for="lead-organization">
+                Organisation Name <span>*</span>
+              </label>
+
+              <input id="lead-organization" type="text" [(ngModel)]="leadForm.organizationName" name="organizationName"
+                placeholder="Enter organisation name" autocomplete="organization" />
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-field">
+
+              <label for="lead-email">
+                Work Email <span>*</span>
+              </label>
+
+              <input id="lead-email" type="email" [(ngModel)]="leadForm.email" name="email"
+                placeholder="name@company.com" autocomplete="email" />
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-field">
+
+              <label for="lead-phone">
+                Phone Number <span>*</span>
+              </label>
+
+              <input id="lead-phone" type="tel" [(ngModel)]="leadForm.phone" name="phone"
+                placeholder="Enter phone number" autocomplete="tel" />
+
+            </div>
+
+
+            <!-- ORGANISATION SIZE -->
+
+            <div class="form-field full-width">
+
+              <label for="lead-size">
+                Organisation Size
+              </label>
+
+              <select id="lead-size" [(ngModel)]="leadForm.organizationSize" name="organizationSize">
+
+                <option value="">
+                  Select organisation size
+                </option>
+
+                <option value="1-10">
+                  1–10 employees
+                </option>
+
+                <option value="11-50">
+                  11–50 employees
+                </option>
+
+                <option value="51-200">
+                  51–200 employees
+                </option>
+
+                <option value="201-500">
+                  201–500 employees
+                </option>
+
+                <option value="500+">
+                  500+ employees
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOOTER -->
+
+          <div class="lead-modal-footer">
+
+            <p>
+              <span>🔒</span>
+              Your information is only used to contact you about CAPS-AI.
+            </p>
+
+
+            <div class="lead-actions">
+
+              <button type="button" class="back-button" (click)="closeLeadForm()">
+                Cancel
+              </button>
+
+
+              <button type="button" class="continue-button" [disabled]="
+                !leadForm.name.trim() ||
+                !leadForm.organizationName.trim() ||
+                !leadForm.email.trim() ||
+                !leadForm.phone.trim()
+              " (click)="submitLead()">
+
+                Continue
+
+                <span>
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ======================================================
+       COMPARISON
+  ======================================================= -->
+
+  <section class="comparison-section">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            MODULES & FEATURES
+          </span>
+
+          <h2>
+            See exactly what is
+            <span>included.</span>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p>
+            Compare all 40 business modules across the five CAPS-AI packages.
+            Filter by business area or search for a specific module.
+          </p>
+
+          <div class="comparison-meta">
+
+            <span class="meta-pill">
+              {{ features.length }} total modules
+            </span>
+
+            <span class="meta-pill">
+              5 packages
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COMPARISON CONTROLS -->
+
+      <div class="comparison-toolbar">
+
+        <div class="comparison-tabs">
+
+          <button type="button" *ngFor="
+              let category
+              of comparisonCategories
+            " [class.active]="
+              selectedCategory === category
+            " (click)="
+              selectCategory(category)
+            ">
+
+            <span>
+              {{ category }}
+            </span>
+
+            <small>
+              {{ getCategoryCount(category) }}
+            </small>
+
+          </button>
+
+        </div>
+
+
+        <label class="module-search">
+
+          <span class="search-icon">
+            ⌕
+          </span>
+
+          <input #moduleSearch type="text" [value]="featureSearchTerm" (input)="featureSearchTerm = moduleSearch.value"
+            placeholder="Search modules..." aria-label="Search modules" />
+
+          <button type="button" *ngIf="featureSearchTerm" (click)="featureSearchTerm = ''" aria-label="Clear search">
+            ×
+          </button>
+
+        </label>
+
+      </div>
+
+
+      <div class="comparison-actions">
+
+        <div class="comparison-result">
+
+          Showing
+          <strong>
+            {{ filteredFeatures.length }}
+          </strong>
+          modules in
+          <strong>
+            {{ selectedCategory }}
+          </strong>
+
+        </div>
+
+
+        <button type="button" class="comparison-toggle" [class.open]="showComparison" (click)="toggleComparison()">
+
+          <span>
+            {{
+            showComparison
+            ? 'Hide module comparison'
+            : 'View module comparison'
+            }}
+          </span>
+
+          <span class="toggle-icon">
+            {{ showComparison ? '↑' : '↓' }}
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- COMPARISON TABLE -->
+
+      <div class="comparison-wrapper" *ngIf="showComparison">
+
+        <div class="comparison-scroll">
+
+          <div class="comparison-table">
+
+
+            <!-- TABLE HEADER -->
+
+            <div class="comparison-row comparison-header">
+
+              <div class="feature-column">
+
+                <span>
+                  MODULE / FEATURE
+                </span>
+
+              </div>
+
+
+              <div class="plan-column startup-head">
+
+                <span>
+                  STARTUP
+                </span>
+
+                <small>
+                  ₹5,999
+                </small>
+
+              </div>
+
+
+              <div class="plan-column sme-head">
+
+                <span>
+                  SME
+                </span>
+
+                <small>
+                  ₹11,999
+                </small>
+
+              </div>
+
+
+              <div class="plan-column growth-column">
+
+                <span>
+                  GROWTH
+                </span>
+
+                <small>
+                  ₹24,999
+                </small>
+
+              </div>
+
+
+              <div class="plan-column enterprise-head">
+
+                <span>
+                  ENTERPRISE
+                </span>
+
+                <small>
+                  ₹49,999+
+                </small>
+
+              </div>
+
+
+              <div class="plan-column custom-head">
+
+                <span>
+                  CUSTOM
+                </span>
+
+                <small>
+                  ₹1,999/module
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <!-- FEATURE ROWS -->
+
+            <div class="comparison-row" *ngFor="
+                let feature
+                of filteredFeatures
+              ">
+
+              <div class="feature-column">
+
+                <span class="feature-name">
+                  {{ feature.name }}
+                </span>
+
+                <span class="feature-category">
+                  {{ feature.category }}
+                </span>
+
+              </div>
+
+
+              <!-- STARTUP -->
+
+              <div class="feature-status" [class.available]="
+                  feature.startup
+                " [class.unavailable]="
+                  !feature.startup
+                ">
+
+                <span *ngIf="
+                    feature.startup
+                  " class="status-check">
+                  ✓
+                </span>
+
+                <span *ngIf="
+                    !feature.startup
+                  " class="status-dash">
+                  —
+                </span>
+
+              </div>
+
+
+              <!-- SME -->
+
+              <div class="feature-status" [class.available]="
+                  feature.sme
+                " [class.unavailable]="
+                  !feature.sme
+                ">
+
+                <span *ngIf="
+                    feature.sme
+                  " class="status-check">
+                  ✓
+                </span>
+
+                <span *ngIf="
+                    !feature.sme
+                  " class="status-dash">
+                  —
+                </span>
+
+              </div>
+
+
+              <!-- GROWTH -->
+
+              <div class="
+                  feature-status
+                  growth-column
+                " [class.available]="
+                  feature.growth
+                " [class.unavailable]="
+                  !feature.growth
+                ">
+
+                <span *ngIf="
+                    feature.growth
+                  " class="status-check">
+                  ✓
+                </span>
+
+                <span *ngIf="
+                    !feature.growth
+                  " class="status-dash">
+                  —
+                </span>
+
+              </div>
+
+
+              <!-- ENTERPRISE -->
+
+              <div class="feature-status" [class.available]="
+                  feature.enterprise
+                " [class.unavailable]="
+                  !feature.enterprise
+                ">
+
+                <span *ngIf="
+                    feature.enterprise
+                  " class="status-check">
+                  ✓
+                </span>
+
+                <span *ngIf="
+                    !feature.enterprise
+                  " class="status-dash">
+                  —
+                </span>
+
+              </div>
+
+
+              <!-- CUSTOM -->
+
+              <div class="feature-status custom-status">
+
+                <span>
+                  Optional
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+     CUSTOM MODULE
+======================================================= -->
+
+  <section class="custom-section">
+
+    <div class="custom-section-inner">
+
+      <!-- LEFT CONTENT -->
+      <div class="custom-content">
+
+        <div class="custom-badge">
+          <span class="badge-icon">☷</span>
+          CAPS-AI CUSTOM
+        </div>
+
+
+        <h2>
+          Build your package
+          <span>your way.</span>
+        </h2>
+
+
+        <p class="custom-description">
+          Choose individual CAPS-AI modules and create a package
+          around the capabilities your organisation actually needs.
+        </p>
+
+
+        <!-- PRICE -->
+        <div class="custom-price-box">
+
+          <div class="price-icon">
+            ₹
+          </div>
+
+          <div class="price-content">
+
+            <strong>
+              ₹1,999
+            </strong>
+
+            <span>
+              / module / month
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+        <div class="custom-benefits">
+
+          <div class="custom-benefit">
+
+            <span class="benefit-check">
+              ✓
+            </span>
+
+            <span>
+              All modules available as optional custom selections
+            </span>
+
+          </div>
+
+
+          <div class="custom-benefit">
+
+            <span class="benefit-check">
+              ✓
+            </span>
+
+            <span>
+              Mix and match across all business functions
+            </span>
+
+          </div>
+
+
+          <div class="custom-benefit">
+
+            <span class="benefit-check">
+              ✓
+            </span>
+
+            <span>
+              Scale your package as your business grows
+            </span>
+
+          </div>
+
+
+          <div class="custom-benefit">
+
+            <span class="benefit-check">
+              ✓
+            </span>
+
+            <span>
+              Easy to add or remove modules anytime
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="custom-actions">
+
+          <button type="button" class="custom-primary-button" (click)="openCustomModulePicker()">
+
+            <span>
+              Build Your Package
+            </span>
+
+            <span class="custom-button-arrow">
+              →
+            </span>
+
+          </button>
+
+
+          <button type="button" class="custom-secondary-button" (click)="scrollToComparison()">
+
+            <span class="modules-icon">
+              ↓
+            </span>
+
+            <span>
+              View All Modules
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT VISUAL -->
+      <div class="custom-visual">
+
+        <!-- OUTER ORBIT -->
+        <div class="custom-orbit custom-orbit-outer"></div>
+
+
+        <!-- INNER ORBIT -->
+        <div class="custom-orbit custom-orbit-inner"></div>
+
+
+        <!-- CONNECTING DOTS -->
+        <div class="orbit-dot dot-one"></div>
+        <div class="orbit-dot dot-two"></div>
+        <div class="orbit-dot dot-three"></div>
+        <div class="orbit-dot dot-four"></div>
+        <div class="orbit-dot dot-five"></div>
+        <div class="orbit-dot dot-six"></div>
+
+
+        <!-- CENTRAL CAPS -->
+        <div class="caps-core">
+
+          <div class="caps-core-text">
+            CAPS
+            <small>AI</small>
+          </div>
+
+        </div>
+
+
+        <!-- MODULE CARDS -->
+
+        <div class="module-card module-finance">
+
+          <div class="module-card-icon">
+            ₹
+          </div>
+
+          <strong>
+            Finance
+          </strong>
+
+        </div>
+
+
+        <div class="module-card module-sales">
+
+          <div class="module-card-icon">
+            ▮▮
+          </div>
+
+          <strong>
+            Sales
+          </strong>
+
+        </div>
+
+
+        <div class="module-card module-support">
+
+          <div class="module-card-icon">
+            ◉
+          </div>
+
+          <strong>
+            Support
+          </strong>
+
+        </div>
+
+
+        <div class="module-card module-operations">
+
+          <div class="module-card-icon">
+            ⚙
+          </div>
+
+          <strong>
+            Operations
+          </strong>
+
+        </div>
+
+
+        <div class="module-card module-inventory">
+
+          <div class="module-card-icon">
+            ◇
+          </div>
+
+          <strong>
+            Inventory
+          </strong>
+
+        </div>
+
+
+        <div class="module-card module-hr">
+
+          <div class="module-card-icon">
+            ◎
+          </div>
+
+          <strong>
+            HR
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ======================================================
+     CUSTOM MODULE SELECTOR
+======================================================= -->
+
+  <div class="custom-module-backdrop" *ngIf="showCustomModulePicker" (click)="closeCustomModulePicker()">
+
+    <div class="custom-module-modal" role="dialog" aria-modal="true" aria-labelledby="custom-module-title"
+      (click)="$event.stopPropagation()">
+
+      <!-- HEADER -->
+
+      <div class="custom-module-header">
+
+        <div>
+
+          <span class="custom-module-eyebrow">
+            CAPS-AI CUSTOM
+          </span>
+
+          <h2 id="custom-module-title">
+            Build your
+            <span>own package.</span>
+          </h2>
+
+          <p>
+            Select only the modules your organisation needs.
+            You can change your selection before continuing.
+          </p>
+
+        </div>
+
+
+        <button type="button" class="custom-module-close" (click)="closeCustomModulePicker()" aria-label="Close">
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- CATEGORY FILTER -->
+
+      <div class="custom-module-toolbar">
+
+        <div class="custom-category-tabs">
+
+          <button type="button" *ngFor="let category of comparisonCategories"
+            [class.active]="customModuleCategory === category" (click)="customModuleCategory = category">
+
+            {{ category }}
+
+            <span>
+              {{ getCategoryCount(category) }}
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="custom-selected-count">
+
+          <strong>
+            {{ customSelectedModules.length }}
+          </strong>
+
+          selected
+
+        </div>
+
+      </div>
+
+
+      <!-- MODULE LIST -->
+
+      <div class="custom-module-list">
+
+        <div class="custom-module-item" *ngFor="let feature of customFilteredFeatures"
+          [class.selected]="isCustomModuleSelected(feature)" (click)="toggleCustomModule(feature)">
+
+          <div class="custom-module-check">
+
+            <span *ngIf="isCustomModuleSelected(feature)">
+              ✓
+            </span>
+
+          </div>
+
+
+          <div class="custom-module-info">
+
+            <strong>
+              {{ feature.name }}
+            </strong>
+
+            <span>
+              {{ feature.category }}
+            </span>
+
+          </div>
+
+
+          <div class="custom-module-price">
+            ₹1,999
+          </div>
+
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div class="custom-module-empty" *ngIf="customFilteredFeatures.length === 0">
+
+          No modules found.
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER -->
+
+      <div class="custom-module-footer">
+
+        <div class="custom-total">
+
+          <span>
+            YOUR CUSTOM PACKAGE
+          </span>
+
+          <div>
+
+            <strong>
+              {{ customSelectedModules.length }}
+            </strong>
+
+            <span>
+              modules
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="custom-total-price">
+
+          <span>
+            MONTHLY TOTAL
+          </span>
+
+          <strong>
+            {{ getCustomMonthlyPrice() | currency:'INR':'symbol':'1.0-0' }}
+          </strong>
+
+        </div>
+
+
+        <div class="custom-module-actions">
+
+          <button type="button" class="custom-module-cancel" (click)="closeCustomModulePicker()">
+            Cancel
+          </button>
+
+
+          <button type="button" class="custom-module-continue" [disabled]="customSelectedModules.length === 0"
+            (click)="continueWithCustomPackage()">
+
+            Continue
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       ENTERPRISE CTA
+  ======================================================= -->
+
+  <section class="enterprise-section">
+
+    <div class="enterprise-inner">
+
+      <div class="enterprise-content">
+
+        <span class="cta-label">
+          FOR LARGE ORGANISATIONS
+        </span>
+
+        <h2>
+          Ready to
+          <span>integrate and scale?</span>
+        </h2>
+
+        <p>
+          Explore how CAPS-AI can support your organisation
+          with broader operational integration and the full
+          set of business capabilities.
+        </p>
+
+      </div>
+
+
+      <div class="enterprise-action">
+
+        <div class="enterprise-price">
+
+          <strong>
+            ₹49,999+
+          </strong>
+
+          <span>
+            /month
+          </span>
+
+        </div>
+
+        <button type="button" class="enterprise-button">
+
+          Talk to CAPS-AI
+
+          <span>
+            ↗
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

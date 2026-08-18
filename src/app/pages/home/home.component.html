@@ -253,248 +253,393 @@
     <!-- =========================================================
        02 — WHAT CAPS-AI STANDS FOR
   ========================================================== -->
+    <!-- =========================================================
+     CAPS-AI MEANING
+========================================================= -->
 
     <section class="caps-meaning">
 
         <div class="caps-meaning-container">
 
 
-            <!-- Intro -->
+            <!-- =================================================
+             INTRO
+        ================================================== -->
 
             <div class="caps-meaning-intro">
 
                 <div class="section-eyebrow">
 
-                    <span> <img src="assets/caps-ai-logo.png" alt="Logo"
-                            style="border-radius: 6px; width: 10px;"></span>
+                    <span class="meaning-eyebrow-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
 
-                    WHAT CAPS-AI STANDS FOR
+                    THE IDEA BEHIND CAPS-AI
 
                 </div>
 
 
                 <h2>
-
-                    CAPS-AI is more
-                    <span>than just a name.</span>
-
+                    A Name Built around
+                    <span>how Businesses Grow.</span>
                 </h2>
 
 
                 <p>
-
-                    It represents the complete journey of a modern
-                    business — from running operations to creating
-                    intelligent, automated growth.
-
+                    CAPS-AI brings together the critical stages of
+                    running a modern business — from complete
+                    operations and automation to production, sales
+                    and intelligent decision-making.
                 </p>
 
             </div>
 
 
-            <!-- CAPS Cards -->
+            <!-- =================================================
+             ACRONYM JOURNEY
+        ================================================== -->
 
-            <div class="caps-meaning-grid">
+            <div class="caps-acronym">
 
 
-                <!-- COMPLETE -->
+                <!-- CONNECTING LINE -->
 
-                <article class="caps-meaning-card">
+                <div class="acronym-line">
 
-                    <div class="meaning-card-number">
+                    <span></span>
+
+                </div>
+
+
+                <!-- =================================================
+                 C
+            ================================================== -->
+
+                <button type="button" class="acronym-item active" [class.active]="activeMeaning === 0"
+                    (click)="activeMeaning = 0">
+
+                    <span class="acronym-number">
                         01
-                    </div>
+                    </span>
 
-                    <div class="meaning-icon">
+                    <span class="acronym-letter">
                         C
-                    </div>
+                    </span>
 
-                    <div class="meaning-card-content">
+                    <span class="acronym-name">
+                        Complete
+                    </span>
 
-                        <span class="meaning-label">
-                            C
-                        </span>
+                    <span class="acronym-description">
+                        One connected platform
+                        for your entire business.
+                    </span>
 
-                        <h3>
-                            Complete
-                        </h3>
+                    <span class="acronym-arrow">
+                        →
+                    </span>
 
-                        <p>
-                            One connected platform for the
-                            entire business.
-                        </p>
-
-                    </div>
-
-                    <div class="meaning-card-line"></div>
-
-                </article>
+                </button>
 
 
-                <!-- AUTOMATION -->
+                <!-- =================================================
+                 A
+            ================================================== -->
 
-                <article class="caps-meaning-card">
+                <button type="button" class="acronym-item" [class.active]="activeMeaning === 1"
+                    (click)="activeMeaning = 1">
 
-                    <div class="meaning-card-number">
+                    <span class="acronym-number">
                         02
-                    </div>
+                    </span>
 
-                    <div class="meaning-icon">
+                    <span class="acronym-letter">
                         A
-                    </div>
+                    </span>
 
-                    <div class="meaning-card-content">
+                    <span class="acronym-name">
+                        Automation
+                    </span>
 
-                        <span class="meaning-label">
-                            A
-                        </span>
+                    <span class="acronym-description">
+                        Reduce repetitive work
+                        through intelligent workflows.
+                    </span>
 
-                        <h3>
-                            Automation
-                        </h3>
+                    <span class="acronym-arrow">
+                        →
+                    </span>
 
-                        <p>
-                            Reduce manual work through
-                            intelligent workflows.
-                        </p>
-
-                    </div>
-
-                    <div class="meaning-card-line"></div>
-
-                </article>
+                </button>
 
 
-                <!-- PRODUCTION -->
+                <!-- =================================================
+                 P
+            ================================================== -->
 
-                <article class="caps-meaning-card">
+                <button type="button" class="acronym-item" [class.active]="activeMeaning === 2"
+                    (click)="activeMeaning = 2">
 
-                    <div class="meaning-card-number">
+                    <span class="acronym-number">
                         03
-                    </div>
+                    </span>
 
-                    <div class="meaning-icon">
+                    <span class="acronym-letter">
                         P
-                    </div>
+                    </span>
 
-                    <div class="meaning-card-content">
+                    <span class="acronym-name">
+                        Production
+                    </span>
 
-                        <span class="meaning-label">
-                            P
-                        </span>
+                    <span class="acronym-description">
+                        Plan, manage and improve
+                        everyday operations.
+                    </span>
 
-                        <h3>
-                            Production
-                        </h3>
+                    <span class="acronym-arrow">
+                        →
+                    </span>
 
-                        <p>
-                            Plan, produce, monitor and improve
-                            your operations.
-                        </p>
-
-                    </div>
-
-                    <div class="meaning-card-line"></div>
-
-                </article>
+                </button>
 
 
-                <!-- SALES -->
+                <!-- =================================================
+                 S
+            ================================================== -->
 
-                <article class="caps-meaning-card">
+                <button type="button" class="acronym-item" [class.active]="activeMeaning === 3"
+                    (click)="activeMeaning = 3">
 
-                    <div class="meaning-card-number">
+                    <span class="acronym-number">
                         04
-                    </div>
+                    </span>
 
-                    <div class="meaning-icon">
+                    <span class="acronym-letter">
                         S
-                    </div>
+                    </span>
 
-                    <div class="meaning-card-content">
+                    <span class="acronym-name">
+                        Sales
+                    </span>
 
-                        <span class="meaning-label">
-                            S
-                        </span>
+                    <span class="acronym-description">
+                        Connect customers,
+                        orders and revenue.
+                    </span>
 
-                        <h3>
-                            Sales
-                        </h3>
+                    <span class="acronym-arrow">
+                        →
+                    </span>
 
-                        <p>
-                            Connect customers, orders and
-                            revenue seamlessly.
-                        </p>
-
-                    </div>
-
-                    <div class="meaning-card-line"></div>
-
-                </article>
+                </button>
 
 
-                <!-- AI -->
+                <!-- =================================================
+                 AI
+            ================================================== -->
 
-                <article class="caps-meaning-card caps-meaning-ai">
+                <button type="button" class="acronym-item acronym-ai" [class.active]="activeMeaning === 4"
+                    (click)="activeMeaning = 4">
 
-                    <div class="meaning-card-number">
+                    <span class="acronym-number">
                         05
-                    </div>
+                    </span>
 
-                    <div class="meaning-icon meaning-ai-icon">
+                    <span class="acronym-letter">
                         AI
-                    </div>
+                    </span>
 
-                    <div class="meaning-card-content">
+                    <span class="acronym-name">
+                        Intelligence
+                    </span>
 
-                        <span class="meaning-label">
-                            AI
-                        </span>
+                    <span class="acronym-description">
+                        Turn business data into
+                        intelligent action.
+                    </span>
 
-                        <h3>
-                            Using AI
-                        </h3>
+                    <span class="acronym-arrow">
+                        →
+                    </span>
 
-                        <p>
-                            Turn business data into intelligence
-                            and action.
-                        </p>
-
-                    </div>
-
-                    <div class="meaning-card-line"></div>
-
-                </article>
+                </button>
 
             </div>
 
 
-            <!-- Statement -->
+            <!-- =================================================
+             ACTIVE EXPLANATION
+        ================================================== -->
 
-            <div class="caps-meaning-statement">
+            <div class="meaning-explanation">
 
-                <div class="statement-icon">
-                    <img src="assets/caps-ai-logo.png" alt="Logo" style="border-radius: 14px;">
+
+                <div class="meaning-explanation-left">
+
+                    <span class="meaning-active-label">
+                        CAPS-AI / 0{{ activeMeaning + 1 }}
+                    </span>
+
+
+                    <h3>
+
+                        <ng-container [ngSwitch]="activeMeaning">
+
+                            <span *ngSwitchCase="0">
+                                Complete your
+                                <strong>business picture.</strong>
+                            </span>
+
+                            <span *ngSwitchCase="1">
+                                Automate what
+                                <strong>slows you down.</strong>
+                            </span>
+
+                            <span *ngSwitchCase="2">
+                                Make production
+                                <strong>more connected.</strong>
+                            </span>
+
+                            <span *ngSwitchCase="3">
+                                Turn operations into
+                                <strong>growth.</strong>
+                            </span>
+
+                            <span *ngSwitchCase="4">
+                                Put AI behind
+                                <strong>every decision.</strong>
+                            </span>
+
+                        </ng-container>
+
+                    </h3>
+
                 </div>
 
+
+                <div class="meaning-explanation-right">
+
+                    <p *ngIf="activeMeaning === 0">
+                        CAPS-AI gives your teams one connected
+                        environment to see and manage the
+                        critical parts of the business.
+                    </p>
+
+
+                    <p *ngIf="activeMeaning === 1">
+                        Intelligent workflows reduce repetitive
+                        tasks so your people can spend more time
+                        on work that actually matters.
+                    </p>
+
+
+                    <p *ngIf="activeMeaning === 2">
+                        Bring operational activity into a clearer
+                        workflow so teams can plan, monitor and
+                        improve the way work gets done.
+                    </p>
+
+
+                    <p *ngIf="activeMeaning === 3">
+                        Connect customer activity, transactions
+                        and revenue to create a smoother path
+                        from operation to growth.
+                    </p>
+
+
+                    <p *ngIf="activeMeaning === 4">
+                        CAPS-AI uses intelligence to transform
+                        business information into insights,
+                        recommendations and action.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             BRAND STATEMENT
+        ================================================== -->
+
+            <div class="caps-brand-statement">
+
+                <div class="brand-statement-mark">
+
+                    <span>C</span>
+                    <span>A</span>
+                    <span>P</span>
+                    <span>S</span>
+                    <b>AI</b>
+
+                </div>
+
+
+                <div class="brand-statement-content">
+
+                    <span>
+                        THE CAPS-AI PRINCIPLE
+                    </span>
+
+                    <strong>
+                        Complete Automation of
+                        Production &amp; Sales using AI.
+                    </strong>
+
+                </div>
+
+
+                <div class="brand-statement-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             BOTTOM STATEMENT
+        ================================================== -->
+
+            <div class="caps-meaning-footer">
+
+                <span>
+                    COMPLETE
+                </span>
+
+                <i></i>
+
+                <span>
+                    AUTOMATE
+                </span>
+
+                <i></i>
+
+                <span>
+                    PRODUCE
+                </span>
+
+                <i></i>
+
+                <span>
+                    SELL
+                </span>
+
+                <i></i>
+
                 <strong>
-                    Complete Automation of Production & Sales using AI
+                    INTELLIGENTLY
                 </strong>
 
             </div>
 
 
-            <p class="caps-meaning-footer">
-
-                Complete Automation.
-                Intelligent Operations.
-                Measurable Growth.
-
-            </p>
-
         </div>
 
     </section>
+
 
     <!-- =========================================================
      03 — CAPS-AI SOLUTIONS
@@ -635,10 +780,20 @@
                         </div>
 
 
-                        <div class="screenshot-frame">
+                        <div class="screenshot-frame" (mouseenter)="pauseSolutionSlideshow()"
+                            (mouseleave)="resumeSolutionSlideshow()">
+                            <div class="solution-image-indicators" *ngIf="getActiveSolution().images.length > 1">
 
-                            <img [src]="'assets/solutions/' + getActiveSolution().type + '.png'"
-                                [alt]="getActiveSolution().name + ' CAPS-AI interface'" />
+                                <button *ngFor="let image of getActiveSolution().images; let i = index" type="button"
+                                    [class.active]="activeImageIndex === i"
+                                    [attr.aria-label]="'View screenshot ' + (i + 1)" (click)="activeImageIndex = i">
+                                </button>
+
+                            </div>
+
+                            <img [src]="getActiveSolution().images[activeImageIndex]"
+                                [alt]="getActiveSolution().name + ' CAPS-AI interface'"
+                                class="solution-product-image" />
 
                         </div>
 
