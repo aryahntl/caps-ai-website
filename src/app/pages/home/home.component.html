@@ -1,125 +1,112 @@
 <main class="caps-home">
 
+
     <!-- =========================================================
-       01 — HERO
+       HERO
   ========================================================== -->
 
-    <section class="caps-hero">
+    <section class="hero-section">
 
-        <div class="caps-hero-bg"></div>
+        <div class="hero-background">
 
-        <div class="caps-hero-container">
+            <div class="hero-glow hero-glow-blue"></div>
 
-            <!-- ================= LEFT ================= -->
+            <div class="hero-glow hero-glow-purple"></div>
 
-            <div class="caps-hero-content">
+            <div class="hero-grid"></div>
 
-                <div class="caps-hero-eyebrow">
-                    <span class="eyebrow-pulse"></span>
+        </div>
 
-                    AI-POWERED BUSINESS PLATFORM
+
+        <div class="page-container hero-container">
+
+
+            <!-- HERO COPY -->
+
+            <div class="hero-copy">
+
+
+                <div class="brand-pill">
+
+                    <span class="brand-pill-icon">✦</span>
+
+                    <span>CAPS-AI</span>
+
+                    <span class="brand-pill-text">
+                        AI-POWERED BUSINESS PLATFORM
+                    </span>
+
                 </div>
 
 
                 <h1>
 
-                    Complete business
-                    <span>automation.</span>
+                    Run your business
 
-                    <br>
-
-                    From
-                    <strong>production</strong>
-                    to
-                    <strong>sales.</strong>
+                    <span>smarter.</span>
 
                 </h1>
 
 
-                <p class="caps-hero-description">
+                <p class="hero-description">
 
                     CAPS-AI connects your business operations,
-                    people, sales and workflows into one intelligent
-                    platform — with AI at the core.
+                    people, customers and workflows in one
+                    intelligent platform.
 
                 </p>
 
 
-                <!-- CAPS meaning -->
+                <div class="hero-simple-message">
 
-                <div class="hero-caps-line">
-
-                    <div class="hero-caps-item">
-                        <b>C</b>
-                        <span>Complete</span>
-                    </div>
-
-                    <i></i>
-
-                    <div class="hero-caps-item">
-                        <b>A</b>
-                        <span>Automation</span>
-                    </div>
-
-                    <i></i>
-
-                    <div class="hero-caps-item">
-                        <b>P</b>
-                        <span>Production</span>
-                    </div>
-
-                    <i></i>
-
-                    <div class="hero-caps-item">
-                        <b>S</b>
-                        <span>Sales</span>
-                    </div>
-
-                    <i></i>
-
-                    <div class="hero-caps-item">
-                        <b>AI</b>
-                        <span>Using AI</span>
-                    </div>
-
-                </div>
-
-
-                <!-- CTA -->
-
-                <div class="caps-hero-actions">
-
-                    <a routerLink="/platform" class="caps-primary-btn">
-
-                        Explore CAPS-AI
-
-                        <span>→</span>
-
-                    </a>
-
-
-                    <a routerLink="/contact" class="caps-secondary-btn">
-
-                        Talk to an Expert
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-
-                <!-- Trust -->
-
-                <div class="caps-hero-trust">
-
-                    <span class="trust-check">
-                        ✓
-                    </span>
+                    <span class="message-icon">✦</span>
 
                     <span>
-                        Complete Automation. Intelligent Operations.
-                        Measurable Growth.
+                        One connected platform.
+                        Intelligence at the core.
+                    </span>
+
+                </div>
+
+
+                <div class="hero-actions">
+
+                    <a routerLink="/platform" class="primary-button">
+
+                        <span>Explore CAPS-AI</span>
+
+                        <b>→</b>
+
+                    </a>
+
+
+                    <a routerLink="/contact" class="secondary-button">
+
+                        <span>Talk to an Expert</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-trust">
+
+                    <span class="trust-check">✓</span>
+
+                    <span>
+                        Connected
+                    </span>
+
+                    <i></i>
+
+                    <span>
+                        AI-powered
+                    </span>
+
+                    <i></i>
+
+                    <span>
+                        Built to scale
                     </span>
 
                 </div>
@@ -127,85 +114,107 @@
             </div>
 
 
-            <!-- ================= RIGHT ================= -->
+            <!-- HERO MEDIA -->
 
-            <div class="caps-hero-visual">
+            <div class="hero-media-wrapper">
 
-                <div class="hero-visual-glow"></div>
+                <div class="hero-media-card">
 
 
-                <div class="caps-ecosystem-card">
+                    <div class="media-topbar">
 
-                    <!-- Visual top bar -->
+                        <div class="media-brand">
 
-                    <div class="ecosystem-topbar">
+                            <img src="assets/caps-ai-logo.png" alt="CAPS-AI logo">
 
-                        <div class="ecosystem-brand">
+                            <div>
 
-                            <span class="ecosystem-brand-icon">
-                                <img src="assets/caps-ai-logo.png" alt="Logo" style="border-radius: 5.4px;">
+                                <strong>CAPS-AI</strong>
+
+                                <small>
+                                    Intelligent business platform
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="media-status">
+
+                            <i></i>
+
+                            AI at the core
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-media">
+
+                        <ng-container *ngIf="heroVideoAvailable; else heroFallback">
+
+                            <video #heroVideo class="hero-video" autoplay muted loop playsinline preload="metadata"
+                                poster="assets/capsai-platform.png" (error)="onHeroVideoError()">
+
+                                <source src="assets/videos/caps-ai-hero.mp4" type="video/mp4">
+
+                            </video>
+
+                        </ng-container>
+
+                        <ng-template #heroFallback>
+
+                            <img src="assets/capsai-platform.png" alt="CAPS-AI business platform"
+                                class="hero-image-fallback">
+
+                        </ng-template>
+
+
+                        <div class="hero-media-overlay"></div>
+
+
+                        <div class="hero-media-caption">
+
+                            <span>
+                                ONE CONNECTED ECOSYSTEM
                             </span>
 
                             <strong>
-                                CAPS-AI
+                                Your business, working together.
                             </strong>
 
                         </div>
 
 
-                        <div class="ecosystem-status">
+                        <button *ngIf="heroVideoAvailable" type="button" class="video-control"
+                            aria-label="Toggle hero video sound" (click)="toggleHeroSound()">
 
-                            <span></span>
+                            {{ heroMuted ? '🔇' : '🔊' }}
 
-                            AI at the core
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-media-footer">
+
+                        <div>
+
+                            <span>CAPS-AI</span>
+
+                            <strong>
+                                Connect. Automate. Grow.
+                            </strong>
 
                         </div>
 
-                    </div>
-
-
-                    <!-- Actual ecosystem image -->
-
-                    <div class="ecosystem-image-container">
-
-                        <img src="assets/capsai-platform.png" alt="CAPS-AI business automation ecosystem"
-                            class="ecosystem-image" />
-
-                    </div>
-
-                </div>
-
-
-                <!-- Floating AI badge -->
-
-                <div class="hero-ai-badge">
-
-                    <div class="hero-ai-icon">
-                        <img src="assets/caps-ai-logo.png" alt="Logo" style="border-radius: 6px; ">
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            AI at the core
-                        </strong>
-
-                        <span>
-                            Intelligence across every operation
+                        <span class="media-arrow">
+                            ↗
                         </span>
 
                     </div>
-
-                </div>
-
-
-                <!-- Floating platform badge -->
-
-                <div class="hero-platform-badge">
-
-                    <span class="platform-dot"></span>
-
-                    One connected platform
 
                 </div>
 
@@ -214,33 +223,87 @@
         </div>
 
 
-        <!-- Hero bottom -->
+        <!-- QUICK UNDERSTANDING STRIP -->
 
-        <div class="caps-hero-bottom">
+        <div class="hero-understanding">
 
-            <div class="caps-hero-bottom-inner">
+            <div class="page-container">
 
-                <span class="bottom-label">
-                    CAPS-AI
-                </span>
+                <div class="understanding-item">
 
-                <span>Complete</span>
+                    <span>01</span>
 
-                <i></i>
+                    <div>
 
-                <span>Automation</span>
+                        <strong>Connect</strong>
 
-                <i></i>
+                        <small>
+                            Bring your business together
+                        </small>
 
-                <span>Production</span>
+                    </div>
 
-                <i></i>
+                </div>
 
-                <span>Sales</span>
 
-                <i></i>
+                <div class="understanding-line"></div>
 
-                <span>AI Powered</span>
+
+                <div class="understanding-item">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <strong>Automate</strong>
+
+                        <small>
+                            Reduce repetitive work
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="understanding-line"></div>
+
+
+                <div class="understanding-item">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <strong>Understand</strong>
+
+                        <small>
+                            Turn activity into insight
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="understanding-line"></div>
+
+
+                <div class="understanding-item">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <strong>Act</strong>
+
+                        <small>
+                            Make smarter decisions
+                        </small>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -249,392 +312,625 @@
     </section>
 
 
-
     <!-- =========================================================
-       02 — WHAT CAPS-AI STANDS FOR
+       WHAT IS CAPS-AI
   ========================================================== -->
-    <!-- =========================================================
-     CAPS-AI MEANING
-========================================================= -->
 
-    <section class="caps-meaning">
+    <section class="intro-section">
 
-        <div class="caps-meaning-container">
+        <div class="page-container">
 
 
-            <!-- =================================================
-             INTRO
-        ================================================== -->
+            <div class="section-heading">
 
-            <div class="caps-meaning-intro">
-
-                <div class="section-eyebrow">
-
-                    <span class="meaning-eyebrow-mark">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-
-                    THE IDEA BEHIND CAPS-AI
-
-                </div>
-
+                <span class="section-label">
+                    WHAT IS CAPS-AI?
+                </span>
 
                 <h2>
-                    A Name Built around
-                    <span>how Businesses Grow.</span>
+                    One platform for the way
+                    <span>your business works.</span>
                 </h2>
 
-
                 <p>
-                    CAPS-AI brings together the critical stages of
-                    running a modern business — from complete
-                    operations and automation to production, sales
-                    and intelligent decision-making.
+                    CAPS-AI brings customers, operations, sales,
+                    workforce and automation together so your
+                    business can work from one connected ecosystem.
                 </p>
 
             </div>
 
 
-            <!-- =================================================
-             ACRONYM JOURNEY
-        ================================================== -->
-
-            <div class="caps-acronym">
+            <div class="intro-layout">
 
 
-                <!-- CONNECTING LINE -->
+                <!-- LEFT EXPLANATION -->
 
-                <div class="acronym-line">
+                <div class="intro-main-card">
 
-                    <span></span>
+                    <div class="intro-card-icon">
+                        ✦
+                    </div>
 
-                </div>
-
-
-                <!-- =================================================
-                 C
-            ================================================== -->
-
-                <button type="button" class="acronym-item active" [class.active]="activeMeaning === 0"
-                    (click)="activeMeaning = 0">
-
-                    <span class="acronym-number">
-                        01
+                    <span class="intro-card-label">
+                        THE SIMPLE IDEA
                     </span>
-
-                    <span class="acronym-letter">
-                        C
-                    </span>
-
-                    <span class="acronym-name">
-                        Complete
-                    </span>
-
-                    <span class="acronym-description">
-                        One connected platform
-                        for your entire business.
-                    </span>
-
-                    <span class="acronym-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-                <!-- =================================================
-                 A
-            ================================================== -->
-
-                <button type="button" class="acronym-item" [class.active]="activeMeaning === 1"
-                    (click)="activeMeaning = 1">
-
-                    <span class="acronym-number">
-                        02
-                    </span>
-
-                    <span class="acronym-letter">
-                        A
-                    </span>
-
-                    <span class="acronym-name">
-                        Automation
-                    </span>
-
-                    <span class="acronym-description">
-                        Reduce repetitive work
-                        through intelligent workflows.
-                    </span>
-
-                    <span class="acronym-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-                <!-- =================================================
-                 P
-            ================================================== -->
-
-                <button type="button" class="acronym-item" [class.active]="activeMeaning === 2"
-                    (click)="activeMeaning = 2">
-
-                    <span class="acronym-number">
-                        03
-                    </span>
-
-                    <span class="acronym-letter">
-                        P
-                    </span>
-
-                    <span class="acronym-name">
-                        Production
-                    </span>
-
-                    <span class="acronym-description">
-                        Plan, manage and improve
-                        everyday operations.
-                    </span>
-
-                    <span class="acronym-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-                <!-- =================================================
-                 S
-            ================================================== -->
-
-                <button type="button" class="acronym-item" [class.active]="activeMeaning === 3"
-                    (click)="activeMeaning = 3">
-
-                    <span class="acronym-number">
-                        04
-                    </span>
-
-                    <span class="acronym-letter">
-                        S
-                    </span>
-
-                    <span class="acronym-name">
-                        Sales
-                    </span>
-
-                    <span class="acronym-description">
-                        Connect customers,
-                        orders and revenue.
-                    </span>
-
-                    <span class="acronym-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-                <!-- =================================================
-                 AI
-            ================================================== -->
-
-                <button type="button" class="acronym-item acronym-ai" [class.active]="activeMeaning === 4"
-                    (click)="activeMeaning = 4">
-
-                    <span class="acronym-number">
-                        05
-                    </span>
-
-                    <span class="acronym-letter">
-                        AI
-                    </span>
-
-                    <span class="acronym-name">
-                        Intelligence
-                    </span>
-
-                    <span class="acronym-description">
-                        Turn business data into
-                        intelligent action.
-                    </span>
-
-                    <span class="acronym-arrow">
-                        →
-                    </span>
-
-                </button>
-
-            </div>
-
-
-            <!-- =================================================
-             ACTIVE EXPLANATION
-        ================================================== -->
-
-            <div class="meaning-explanation">
-
-
-                <div class="meaning-explanation-left">
-
-                    <span class="meaning-active-label">
-                        CAPS-AI / 0{{ activeMeaning + 1 }}
-                    </span>
-
 
                     <h3>
-
-                        <ng-container [ngSwitch]="activeMeaning">
-
-                            <span *ngSwitchCase="0">
-                                Complete your
-                                <strong>business picture.</strong>
-                            </span>
-
-                            <span *ngSwitchCase="1">
-                                Automate what
-                                <strong>slows you down.</strong>
-                            </span>
-
-                            <span *ngSwitchCase="2">
-                                Make production
-                                <strong>more connected.</strong>
-                            </span>
-
-                            <span *ngSwitchCase="3">
-                                Turn operations into
-                                <strong>growth.</strong>
-                            </span>
-
-                            <span *ngSwitchCase="4">
-                                Put AI behind
-                                <strong>every decision.</strong>
-                            </span>
-
-                        </ng-container>
-
+                        Instead of managing
+                        disconnected systems,
+                        <strong>
+                            connect your business.
+                        </strong>
                     </h3>
+
+                    <p>
+                        CAPS-AI is designed to make the important
+                        parts of your business work together.
+                        Information can move between workflows,
+                        teams can work from clearer processes,
+                        and AI can help turn business activity
+                        into useful action.
+                    </p>
+
+
+                    <a routerLink="/platform" class="text-link">
+
+                        See the CAPS-AI platform
+
+                        <span>→</span>
+
+                    </a>
 
                 </div>
 
 
-                <div class="meaning-explanation-right">
+                <!-- RIGHT FLOW -->
 
-                    <p *ngIf="activeMeaning === 0">
-                        CAPS-AI gives your teams one connected
-                        environment to see and manage the
-                        critical parts of the business.
+                <div class="business-flow">
+
+                    <div class="flow-heading">
+
+                        <span>FROM ACTIVITY TO ACTION</span>
+
+                        <strong>
+                            How CAPS-AI connects the dots
+                        </strong>
+
+                    </div>
+
+
+                    <div class="flow-list">
+
+                        <div class="flow-item">
+
+                            <span class="flow-icon">◎</span>
+
+                            <div>
+
+                                <strong>
+                                    Business activity
+                                </strong>
+
+                                <small>
+                                    Customers, operations, sales and teams
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flow-connector"></div>
+
+
+                        <div class="flow-item">
+
+                            <span class="flow-icon blue">✦</span>
+
+                            <div>
+
+                                <strong>
+                                    Connected information
+                                </strong>
+
+                                <small>
+                                    Bring the important information together
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flow-connector"></div>
+
+
+                        <div class="flow-item">
+
+                            <span class="flow-icon purple">◉</span>
+
+                            <div>
+
+                                <strong>
+                                    AI intelligence
+                                </strong>
+
+                                <small>
+                                    Find insights and opportunities
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flow-connector"></div>
+
+
+                        <div class="flow-item">
+
+                            <span class="flow-icon navy">→</span>
+
+                            <div>
+
+                                <strong>
+                                    Smarter action
+                                </strong>
+
+                                <small>
+                                    Automate and make better decisions
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+       HOW CAPS-AI WORKS
+  ========================================================== -->
+    <section class="how-section" id="how-caps-works">
+
+        <div class="how-background"></div>
+        <div class="how-grid"></div>
+
+        <div class="page-container">
+
+            <!-- SECTION HEADER -->
+            <div class="section-heading centered how-heading">
+
+                <span class="section-label">
+                    HOW CAPS-AI WORKS
+                </span>
+
+                <h2>
+                    One intelligent flow from
+                    <span>data to action.</span>
+                </h2>
+
+                <p>
+                    CAPS-AI connects the work your teams already do,
+                    automates repeatable processes, turns activity into
+                    useful insight and helps people act faster.
+                </p>
+
+            </div>
+
+
+            <!-- FLOW -->
+            <div class="how-flow-wrapper">
+
+
+                <!-- LEFT STEP NAVIGATION -->
+                <div class="how-step-panel">
+
+                    <div class="how-panel-heading">
+                        <span>THE CAPS-AI FLOW</span>
+
+                        <strong>
+                            How intelligence moves
+                        </strong>
+                    </div>
+
+
+                    <div class="how-steps" role="tablist" aria-label="How CAPS-AI works">
+
+                        <button *ngFor="
+              let step of howCapsWorks;
+              let i = index;
+              trackBy: trackByHowStep
+            " type="button" class="how-step" role="tab" [attr.aria-selected]="activeHowStep === i"
+                            [class.active]="activeHowStep === i" (click)="selectHowStep(i)">
+
+                            <span class="how-step-number">
+                                {{ step.number }}
+                            </span>
+
+                            <span class="how-step-icon">
+                                {{ step.icon }}
+                            </span>
+
+                            <span class="how-step-copy">
+
+                                <strong>
+                                    {{ step.title }}
+                                </strong>
+
+                                <small>
+                                    {{ step.description }}
+                                </small>
+
+                            </span>
+
+                            <span class="how-step-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="how-panel-footer">
+
+                        <span class="how-live-dot"></span>
+
+                        <span>
+                            Connected CAPS-AI ecosystem
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT ACTIVE EXPERIENCE -->
+                <article class="how-detail" role="tabpanel">
+
+
+                    <!-- TOP -->
+                    <div class="how-detail-top">
+
+                        <div class="how-step-counter">
+
+                            <span>
+                                {{ getActiveHowStep().number }}
+                            </span>
+
+                            <small>
+                                / 04
+                            </small>
+
+                        </div>
+
+                        <div class="how-detail-status">
+
+                            <span></span>
+
+                            ACTIVE FLOW
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAIN CONTENT -->
+                    <div class="how-detail-main">
+
+                        <div class="how-detail-content">
+
+                            <span class="how-detail-kicker">
+                                CAPS-AI · {{ getActiveHowStep().number }}
+                            </span>
+
+                            <h3>
+                                {{ getActiveHowStep().title }}
+                            </h3>
+
+                            <p>
+                                {{ getActiveHowStep().detail }}
+                            </p>
+
+
+                            <!-- TAGS -->
+                            <div class="how-detail-tags">
+
+                                <span *ngFor="
+                  let tag of getActiveHowStep().tags
+                ">
+
+                                    <i>✓</i>
+
+                                    {{ tag }}
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- OUTCOME -->
+                            <div class="how-outcome">
+
+                                <div class="how-outcome-icon">
+                                    ✦
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        BUSINESS OUTCOME
+                                    </span>
+
+                                    <strong>
+                                        {{ getActiveHowStep().outcome }}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- VISUAL -->
+                        <div class="how-system-visual">
+
+                            <div class="system-glow"></div>
+
+                            <div class="system-orbit orbit-outer"></div>
+
+                            <div class="system-orbit orbit-inner"></div>
+
+
+                            <!-- CONNECTING LINES -->
+                            <span class="system-line line-top"></span>
+                            <span class="system-line line-right"></span>
+                            <span class="system-line line-bottom"></span>
+                            <span class="system-line line-left"></span>
+
+
+                            <!-- CENTER -->
+                            <div class="system-center">
+
+                                <div class="system-center-ring">
+
+                                    <img src="assets/caps-ai-logo.png" alt="CAPS-AI">
+
+                                </div>
+
+                                <span>
+                                    CAPS-AI
+                                </span>
+
+                            </div>
+
+
+                            <!-- NODES -->
+                            <div class="system-node system-node-top">
+
+                                <span>CRM</span>
+
+                            </div>
+
+                            <div class="system-node system-node-right">
+
+                                <span>OPS</span>
+
+                            </div>
+
+                            <div class="system-node system-node-bottom">
+
+                                <span>AI</span>
+
+                            </div>
+
+                            <div class="system-node system-node-left">
+
+                                <span>SALES</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOTTOM FLOW -->
+                    <div class="how-mini-flow">
+
+                        <div class="mini-flow-item active">
+
+                            <span>01</span>
+                            <strong>Connect</strong>
+
+                        </div>
+
+                        <div class="mini-flow-line"></div>
+
+                        <div class="mini-flow-item">
+
+                            <span>02</span>
+                            <strong>Automate</strong>
+
+                        </div>
+
+                        <div class="mini-flow-line"></div>
+
+                        <div class="mini-flow-item">
+
+                            <span>03</span>
+                            <strong>Understand</strong>
+
+                        </div>
+
+                        <div class="mini-flow-line"></div>
+
+                        <div class="mini-flow-item">
+
+                            <span>04</span>
+                            <strong>Act</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+       CAPS MEANING
+  ========================================================== -->
+
+    <section class="meaning-section">
+
+        <div class="page-container">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    THE CAPS-AI IDEA
+                </span>
+
+                <h2>
+                    What does
+                    <span>CAPS-AI</span>
+                    mean?
+                </h2>
+
+                <p>
+                    The name describes the way CAPS-AI brings
+                    your business together and adds intelligence
+                    to everyday work.
+                </p>
+
+            </div>
+
+
+            <!-- MEANING CARDS -->
+
+            <div class="meaning-grid">
+
+                <button *ngFor="
+            let meaning of meanings;
+            let i = index;
+            trackBy: trackByMeaning
+          " type="button" class="meaning-card" [class.active]="activeMeaning === i" (click)="selectMeaning(i)">
+
+                    <span class="meaning-number">
+                        0{{ i + 1 }}
+                    </span>
+
+                    <span class="meaning-letter">
+                        {{ meaning.letter }}
+                    </span>
+
+                    <span class="meaning-name">
+                        {{ meaning.name }}
+                    </span>
+
+                    <span class="meaning-short">
+                        {{ meaning.shortDescription }}
+                    </span>
+
+                    <span class="meaning-card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- ACTIVE MEANING -->
+
+            <div class="meaning-detail">
+
+                <div class="meaning-detail-number">
+
+                    <span>
+                        CAPS-AI
+                    </span>
+
+                    <b>
+                        0{{ activeMeaning + 1 }}
+                    </b>
+
+                </div>
+
+
+                <div class="meaning-detail-main">
+
+                    <h3>
+                        {{ meanings[activeMeaning].title }}
+                    </h3>
+
+                    <p>
+                        {{ meanings[activeMeaning].description }}
                     </p>
 
-
-                    <p *ngIf="activeMeaning === 1">
-                        Intelligent workflows reduce repetitive
-                        tasks so your people can spend more time
-                        on work that actually matters.
-                    </p>
+                </div>
 
 
-                    <p *ngIf="activeMeaning === 2">
-                        Bring operational activity into a clearer
-                        workflow so teams can plan, monitor and
-                        improve the way work gets done.
-                    </p>
+                <div class="meaning-detail-mark">
 
-
-                    <p *ngIf="activeMeaning === 3">
-                        Connect customer activity, transactions
-                        and revenue to create a smoother path
-                        from operation to growth.
-                    </p>
-
-
-                    <p *ngIf="activeMeaning === 4">
-                        CAPS-AI uses intelligence to transform
-                        business information into insights,
-                        recommendations and action.
-                    </p>
+                    {{ meanings[activeMeaning].letter }}
 
                 </div>
 
             </div>
 
 
-            <!-- =================================================
-             BRAND STATEMENT
-        ================================================== -->
+            <!-- BRAND STATEMENT -->
 
-            <div class="caps-brand-statement">
+            <div class="brand-statement">
 
-                <div class="brand-statement-mark">
+                <div class="brand-mark">
 
-                    <span>C</span>
-                    <span>A</span>
-                    <span>P</span>
-                    <span>S</span>
-                    <b>AI</b>
+                    <img src="assets/caps-ai-logo.png" alt="CAPS-AI logo">
 
                 </div>
 
 
-                <div class="brand-statement-content">
+                <div class="brand-statement-copy">
 
                     <span>
                         THE CAPS-AI PRINCIPLE
                     </span>
 
                     <strong>
-                        Complete Automation of
-                        Production &amp; Sales using AI.
+                        Complete Automation of Production
+                        &amp; Sales using AI.
                     </strong>
 
                 </div>
 
 
-                <div class="brand-statement-arrow">
-                    →
-                </div>
+                <a routerLink="/platform" class="brand-statement-link">
+
+                    Explore platform
+
+                    <span>→</span>
+
+                </a>
 
             </div>
-
-
-            <!-- =================================================
-             BOTTOM STATEMENT
-        ================================================== -->
-
-            <div class="caps-meaning-footer">
-
-                <span>
-                    COMPLETE
-                </span>
-
-                <i></i>
-
-                <span>
-                    AUTOMATE
-                </span>
-
-                <i></i>
-
-                <span>
-                    PRODUCE
-                </span>
-
-                <i></i>
-
-                <span>
-                    SELL
-                </span>
-
-                <i></i>
-
-                <strong>
-                    INTELLIGENTLY
-                </strong>
-
-            </div>
-
 
         </div>
 
@@ -642,225 +938,316 @@
 
 
     <!-- =========================================================
-     03 — CAPS-AI SOLUTIONS
-========================================================== -->
+       SOLUTIONS
+  ========================================================== -->
 
-    <section class="caps-solutions">
+    <section class="solutions-section">
 
-        <div class="caps-solutions-container">
+        <div class="solutions-glow"></div>
 
-            <!-- SECTION HEADER -->
+        <div class="page-container">
 
-            <div class="caps-solutions-header">
 
-                <div class="section-eyebrow">
+            <div class="section-heading centered">
 
-                    <span class="solutions-eyebrow-dot"></span>
-
+                <span class="section-label">
                     CAPS-AI SOLUTIONS
-
-                </div>
+                </span>
 
                 <h2>
-                    One platform.
-                    <span>Every critical operation.</span>
+                    Everything your business needs,
+                    <span>connected.</span>
                 </h2>
 
                 <p>
-                    Explore the connected solutions that help your
-                    business manage customers, operations, sales,
-                    workforce and intelligent automation from one platform.
+                    Explore the solutions inside the CAPS-AI ecosystem.
+                    Choose a solution to see what it does and how it
+                    fits into the bigger picture.
                 </p>
 
             </div>
 
 
-            <!-- SOLUTION EXPERIENCE -->
+            <!-- SOLUTION SELECTOR -->
 
-            <div class="caps-solutions-workspace">
+            <div class="solution-selector-wrapper">
 
+                <div class="solution-selector">
 
-                <!-- =================================================
-           LEFT — SOLUTION NAVIGATION
-      ================================================== -->
+                    <button *ngFor="
+              let solution of solutions;
+              let i = index;
+              trackBy: trackBySolution
+            " type="button" class="solution-selector-item" [class.active]="activeSolution === i"
+                        (click)="selectSolution(i)">
 
-                <div class="solutions-navigation">
-
-                    <div class="solutions-navigation-heading">
-
-                        <span>
-                            PLATFORM
+                        <span class="selector-icon">
+                            {{ solution.icon }}
                         </span>
 
-                        <strong>
-                            Explore solutions
-                        </strong>
-
-                    </div>
-
-
-                    <button *ngFor="let solution of solutions; let i = index" type="button" class="solution-nav-item"
-                        [class.active]="activeSolution === i" (click)="selectSolution(i)">
-
-                        <span class="solution-number">
-                            {{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }} </span>
-
-
-                                <span class="solution-nav-content">
-
-                                    <strong>
-                                        {{ solution.name }}
-                                    </strong>
-
-                                    <small>
-                                        {{ solution.category }}
-                                    </small>
-
-                                </span>
-
-
-                                <span class="solution-arrow">
-                                    →
-                                </span>
+                        <span class="selector-name">
+                            {{ solution.shortName }}
+                        </span>
 
                     </button>
-
-                </div>
-
-
-                <!-- =================================================
-           RIGHT — PRODUCT PREVIEW
-      ================================================== -->
-
-                <div class="solution-preview">
-
-
-                    <!-- PRODUCT HEADER -->
-
-                    <div class="solution-preview-header">
-
-                        <div>
-
-                            <span class="preview-label">
-                                CAPS-AI PLATFORM
-                            </span>
-
-                            <h3>
-                                {{ getActiveSolution().name }}
-                            </h3>
-
-                        </div>
-
-
-                        <div class="preview-status">
-
-                            <span></span>
-
-                            Connected
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- REAL PRODUCT SCREENSHOT -->
-
-                    <div class="solution-screenshot">
-
-                        <div class="browser-bar">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                            <div class="browser-url">
-                                caps-ai platform
-                            </div>
-
-                        </div>
-
-
-                        <div class="screenshot-frame" (mouseenter)="pauseSolutionSlideshow()"
-                            (mouseleave)="resumeSolutionSlideshow()">
-                            <div class="solution-image-indicators" *ngIf="getActiveSolution().images.length > 1">
-
-                                <button *ngFor="let image of getActiveSolution().images; let i = index" type="button"
-                                    [class.active]="activeImageIndex === i"
-                                    [attr.aria-label]="'View screenshot ' + (i + 1)" (click)="activeImageIndex = i">
-                                </button>
-
-                            </div>
-
-                            <img [src]="getActiveSolution().images[activeImageIndex]"
-                                [alt]="getActiveSolution().name + ' CAPS-AI interface'"
-                                class="solution-product-image" />
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- DESCRIPTION -->
-
-                    <div class="solution-preview-footer">
-
-                        <div>
-
-                            <span class="preview-category">
-                                {{ getActiveSolution().category }}
-                            </span>
-
-                            <h4>
-                                {{ getActiveSolution().title }}
-                            </h4>
-
-                            <p>
-                                {{ getActiveSolution().description }}
-                            </p>
-
-                        </div>
-
-
-                        <a [routerLink]="getActiveSolution().route" class="solution-explore-btn">
-
-                            Explore
-                            <span>↗</span>
-
-                        </a>
-
-                    </div>
 
                 </div>
 
             </div>
 
 
-            <!-- TRUST STRIP -->
+            <!-- ACTIVE SOLUTION -->
 
-            <div class="solutions-trust-strip">
+            <div class="solution-showcase">
 
-                <div>
-                    <span class="trust-icon">✓</span>
-                    <strong>Secure</strong>
-                    <small>Business-ready platform</small>
+
+                <!-- MEDIA -->
+
+                <div class="solution-showcase-media">
+
+
+                    <div class="solution-media-top">
+
+                        <div>
+
+                            <span>
+                                CAPS-AI SOLUTION
+                            </span>
+
+                            <strong>
+                                {{ getActiveSolution().name }}
+                            </strong>
+
+                        </div>
+
+
+                        <span class="solution-connected">
+
+                            <i></i>
+
+                            Connected
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="solution-media-frame">
+
+                        <img class="solution-image" [src]="getActiveImage()"
+                            [alt]="getActiveSolution().name + ' solution preview'"
+                            (error)="onSolutionImageError($event)">
+
+                        <div class="solution-media-gradient"></div>
+
+                        <div class="solution-media-label">
+                            <span>{{ getActiveSolution().category }}</span>
+                            <strong>{{ getActiveSolution().shortName }}</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- MEDIA INDICATORS -->
+
+                    <div class="media-indicators" *ngIf="getActiveSolution().images.length > 1">
+
+                        <button *ngFor="
+                let image of getActiveSolution().images;
+                let i = index;
+                trackBy: trackByImage
+              " type="button" [class.active]="activeImageIndex === i"
+                            [attr.aria-label]="'View solution image ' + (i + 1)" (click)="selectSolutionImage(i)">
+
+                            <span>•</span>
+
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <div>
-                    <span class="trust-icon">✦</span>
-                    <strong>Smart</strong>
-                    <small>AI-powered automation</small>
+
+                <!-- CONTENT -->
+
+                <div class="solution-showcase-content">
+
+
+                    <span class="solution-category">
+                        {{ getActiveSolution().category }}
+                    </span>
+
+
+                    <h3>
+                        {{ getActiveSolution().title }}
+                    </h3>
+
+
+                    <p>
+                        {{ getActiveSolution().description }}
+                    </p>
+
+                    <div class="solution-value">
+                        <span>BUSINESS VALUE</span>
+                        <strong>{{ getActiveSolution().businessValue }}</strong>
+                    </div>
+
+                    <div class="solution-capabilities">
+                        <div *ngFor="let capability of getActiveSolution().capabilities">
+                            <span>✓</span>
+                            <strong>{{ capability }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="solution-meta">
+                        <span>BEST FOR</span>
+                        <strong>{{ getActiveSolution().users.join(' · ') }}</strong>
+                    </div>
+
+                    <div class="solution-benefits">
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <strong>
+                                Simple workflow
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>✦</span>
+
+                            <strong>
+                                Connected to the ecosystem
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>→</span>
+
+                            <strong>
+                                Ready to scale
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <a [routerLink]="getActiveSolution().route" class="solution-button">
+
+                        <span>
+                            Explore {{ getActiveSolution().shortName }}
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
+                    </a>
+
                 </div>
 
-                <div>
-                    <span class="trust-icon">↗</span>
-                    <strong>Scalable</strong>
-                    <small>Built to grow with you</small>
-                </div>
+            </div>
+
+
+            <!-- MOBILE SOLUTION EXPLANATION -->
+
+            <div class="solution-mobile-note">
+
+                <span>WHY IT MATTERS</span>
+
+                <p>
+                    Every CAPS-AI solution is designed to work
+                    as part of one connected business ecosystem.
+                </p>
+
+            </div>
+
+
+            <!-- SOLUTION TRUST -->
+
+            <div class="solution-trust">
 
                 <div>
-                    <span class="trust-icon">∞</span>
-                    <strong>Connected</strong>
-                    <small>One business ecosystem</small>
+
+                    <span>✓</span>
+
+                    <div>
+
+                        <strong>
+                            Connected
+                        </strong>
+
+                        <small>
+                            Workflows work together
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>✦</span>
+
+                    <div>
+
+                        <strong>
+                            AI-powered
+                        </strong>
+
+                        <small>
+                            Intelligence at the core
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>∞</span>
+
+                    <div>
+
+                        <strong>
+                            Scalable
+                        </strong>
+
+                        <small>
+                            Grow as your business grows
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>◉</span>
+
+                    <div>
+
+                        <strong>
+                            User-friendly
+                        </strong>
+
+                        <small>
+                            Designed for everyday teams
+                        </small>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -868,5 +1255,200 @@
         </div>
 
     </section>
+
+
+    <!-- =========================================================
+       AI ADVANTAGE
+  ========================================================== -->
+
+    <section class="ai-section">
+
+        <div class="page-container">
+
+
+            <div class="ai-layout">
+
+
+                <div class="ai-copy">
+
+                    <span class="section-label light">
+                        AI AT THE CORE
+                    </span>
+
+
+                    <h2>
+                        AI isn't another tool.
+                        <span>
+                            It's part of the ecosystem.
+                        </span>
+                    </h2>
+
+
+                    <p>
+                        CAPS-AI is designed so intelligence can sit
+                        alongside your everyday business workflows —
+                        helping you understand information, automate
+                        repetitive work and move toward action.
+                    </p>
+
+
+                    <a routerLink="/platform" class="ai-button">
+
+                        See how CAPS-AI works
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="ai-steps">
+
+
+                    <div class="ai-step">
+
+                        <span class="ai-step-number">
+                            01
+                        </span>
+
+                        <div class="ai-step-icon">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Understand
+                            </strong>
+
+                            <p>
+                                Turn business activity into useful information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-step-line"></div>
+
+
+                    <div class="ai-step">
+
+                        <span class="ai-step-number">
+                            02
+                        </span>
+
+                        <div class="ai-step-icon">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Recommend
+                            </strong>
+
+                            <p>
+                                Surface insights and meaningful opportunities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-step-line"></div>
+
+
+                    <div class="ai-step">
+
+                        <span class="ai-step-number">
+                            03
+                        </span>
+
+                        <div class="ai-step-icon">
+                            →
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Act
+                            </strong>
+
+                            <p>
+                                Move from insight to intelligent action.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+       FINAL CTA
+  ========================================================== -->
+
+    <section class="final-section">
+
+        <div class="page-container">
+
+
+            <div class="final-card">
+
+
+                <div class="final-glow"></div>
+
+
+                <div class="final-logo">
+
+                    <img src="assets/caps-ai-logo.png" alt="CAPS-AI">
+
+                </div>
+
+
+                <div class="final-content">
+
+                    <span>
+                        READY TO WORK SMARTER?
+                    </span>
+
+                    <h2>
+                        Bring your business
+                        <strong>together.</strong>
+                    </h2>
+
+                    <p>
+                        Connect your operations, people,
+                        customers and intelligence with CAPS-AI.
+                    </p>
+
+                </div>
+
+
+                <a routerLink="/platform" class="final-button">
+
+                    Explore CAPS-AI
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 </main>

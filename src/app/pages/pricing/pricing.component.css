@@ -4480,3 +4480,72 @@
   }
 
 }
+
+/* Compact page rhythm */
+.pricing-hero {
+  min-height: 470px;
+  padding: 72px 24px 60px;
+}
+
+.plans-section {
+  padding: 58px 0 68px;
+}
+
+.comparison-section {
+  padding: 72px 0 80px;
+}
+
+.custom-section {
+  margin-bottom: 72px;
+}
+
+.custom-section-inner {
+  min-height: 540px;
+  padding: 60px 48px;
+  gap: 42px;
+}
+
+.enterprise-section {
+  padding-bottom: 72px;
+}
+
+.enterprise-inner {
+  min-height: 235px;
+  padding: 42px 0;
+  gap: 40px;
+}
+
+@media (max-width: 650px) {
+  .pricing-hero {
+    min-height: 410px;
+    padding: 58px 15px 48px;
+  }
+
+  .plans-section {
+    padding: 46px 0 56px;
+  }
+
+  .comparison-section {
+    padding: 56px 0 62px;
+  }
+
+  .custom-section {
+    margin: 14px 14px 54px;
+  }
+
+  .custom-section-inner {
+    min-height: auto;
+    padding: 40px 24px;
+    gap: 30px;
+  }
+
+  .enterprise-section {
+    padding: 0 14px 54px;
+  }
+
+  .enterprise-inner {
+    min-height: 0;
+    padding: 34px 0;
+    gap: 28px;
+  }
+}

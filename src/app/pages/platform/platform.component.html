@@ -1,1 +1,486 @@
-<p>platform works!</p>
+<main class="platform-page">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="platform-hero">
+
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <div class="platform-container platform-hero-layout">
+
+      <!-- HERO CONTENT -->
+      <div class="platform-hero-copy">
+
+        <p class="platform-eyebrow">
+          <span></span>
+          Platform overview
+        </p>
+
+        <h1>
+          Every CAPS-AI module,
+          <br>
+          <em>clearly connected.</em>
+        </h1>
+
+        <p class="hero-lead">
+          Use this page to explore the products that power CAPS-AI -
+          from customer management and service to operations,
+          delivery and intelligent automation.
+        </p>
+
+        <div class="hero-actions">
+
+          <a routerLink="/contact" class="platform-button platform-button-primary">
+            Talk to a product expert
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+
+          </a>
+
+          <a href="#modules" class="platform-button platform-button-quiet">
+            Explore modules
+          </a>
+
+        </div>
+
+        <div class="hero-proof" aria-label="Platform benefits">
+
+          <span>
+            <i>✓</i>
+            10 connected modules
+          </span>
+
+          <span>
+            <i>✓</i>
+            Built to expand with you
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================================
+           HERO MEDIA
+           Add image/video from platform.component.ts
+      ========================================================= -->
+      <div class="platform-media-slot hero-media-slot" aria-label="CAPS-AI platform media">
+
+        <!-- IMAGE: shown when image source exists -->
+        <img *ngIf="heroImageSrc && !heroVideoSrc" [src]="heroImageSrc" class="platform-media-asset"
+          alt="CAPS-AI platform" />
+
+        <!-- VIDEO: shown when video source exists -->
+        <video *ngIf="heroVideoSrc" [src]="heroVideoSrc" class="platform-media-asset" autoplay muted [muted]="true" loop
+          playsinline preload="auto" [controls]="false" controlsList="nodownload nofullscreen noremoteplayback"
+          disablePictureInPicture disableRemotePlayback tabindex="-1"></video>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <section class="platform-trust-bar">
+
+    <div class="platform-container trust-grid">
+
+      <div>
+        <span class="trust-icon">◈</span>
+
+        <p>
+          <strong>Connected</strong>
+          Customer, service and operations data in one place.
+        </p>
+      </div>
+
+      <div>
+        <span class="trust-icon">↗</span>
+
+        <p>
+          <strong>Scalable</strong>
+          Start focused. Expand as your business grows.
+        </p>
+      </div>
+
+      <div>
+        <span class="trust-icon">✦</span>
+
+        <p>
+          <strong>Intelligent</strong>
+          Automate repetitive work with AI-ready workflows.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       MODULE EXPLORER
+  ============================================================ -->
+  <section class="modules-section" id="modules">
+
+    <div class="platform-container">
+
+      <!-- SECTION HEADING -->
+      <div class="section-heading">
+
+        <div>
+
+          <p class="platform-eyebrow">
+            <span></span>
+            Built around your work
+          </p>
+
+          <h2>
+            A platform your whole
+            <br>
+            business can <em>grow into.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          Choose only what you need today, then activate more
+          powerful workflows as your people, customers and
+          operations evolve.
+        </p>
+
+      </div>
+
+
+      <!-- MODULE EXPLORER -->
+      <div class="module-explorer">
+
+
+        <!-- ======================================================
+             MODULE LIST
+        ====================================================== -->
+        <div class="module-list" role="tablist" aria-label="CAPS-AI platform modules">
+
+          <button *ngFor="let module of modules; let i = index" type="button" role="tab"
+            [attr.aria-selected]="selectedModule.key === module.key"
+            [class.is-active]="selectedModule.key === module.key" (click)="selectModule(module)">
+
+            <span class="module-number">
+              {{ (i + 1) < 10 ? '0' + (i + 1) : i + 1 }} </span>
+
+                <span class="module-icon" [class]="'module-icon icon-' + module.key">
+                  {{ module.icon }}
+                </span>
+
+                <span class="module-label">
+
+                  <strong>
+                    {{ module.name }}
+                  </strong>
+
+                  <small>
+                    {{ module.shortDescription }}
+                  </small>
+
+                </span>
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+
+          </button>
+
+        </div>
+
+
+        <!-- ======================================================
+             SELECTED MODULE
+        ====================================================== -->
+        <article class="module-showcase" role="tabpanel">
+
+          <!-- MODULE CONTENT -->
+          <div class="showcase-copy">
+
+            <span class="showcase-module">
+              {{ selectedModule.name }}
+            </span>
+
+            <h3>
+              {{ selectedModule.headline }}
+            </h3>
+
+            <p>
+              {{ selectedModule.description }}
+            </p>
+
+            <ul>
+
+              <li *ngFor="let feature of selectedModule.features">
+                <i>✓</i>
+                {{ feature }}
+              </li>
+
+            </ul>
+
+            <a [routerLink]="selectedModule.route" class="text-link">
+              Explore {{ selectedModule.name }}
+
+              <span>→</span>
+            </a>
+
+          </div>
+
+
+          <!-- ====================================================
+               MODULE MEDIA
+               Automatically changes when module changes
+          ==================================================== -->
+          <div class="platform-media-slot module-media-slot"
+            [class]="'platform-media-slot module-media-slot media-' + selectedModule.key">
+
+            <!-- IMAGE -->
+            <img *ngIf="selectedModule.imageSrc && !selectedModule.videoSrc" [src]="selectedModule.imageSrc"
+              class="platform-media-asset" [alt]="selectedModule.name + ' CAPS-AI module'" />
+
+            <!-- VIDEO -->
+            <video *ngIf="selectedModule.videoSrc" [src]="selectedModule.videoSrc" class="platform-media-asset" autoplay
+              muted [muted]="true" loop playsinline preload="auto" [controls]="false"
+              controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture disableRemotePlayback
+              tabindex="-1"></video>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       WORKFLOW
+  ============================================================ -->
+  <section class="workflow-section">
+
+    <div class="platform-container workflow-layout">
+
+
+      <!-- ========================================================
+           WORKFLOW VIDEO
+      ======================================================== -->
+      <div class="workflow-media-slot">
+
+        <video *ngIf="workflowVideoSrc" [src]="workflowVideoSrc" class="platform-media-asset workflow-video" autoplay
+          muted [muted]="true" loop playsinline preload="auto" [controls]="false"
+          controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture disableRemotePlayback
+          tabindex="-1"></video>
+
+      </div>
+
+
+      <!-- WORKFLOW CONTENT -->
+      <div class="workflow-copy">
+
+        <p class="platform-eyebrow">
+          <span></span>
+          Better work, by design
+        </p>
+
+        <h2>
+          Turn every handoff into
+          <br>
+          a <em>smooth next step.</em>
+        </h2>
+
+        <p>
+          Give every team a single source of truth.
+          CAPS-AI carries the context forward - so sales,
+          support, operations and leadership always stay aligned.
+        </p>
+
+        <div class="workflow-points">
+
+          <div>
+            <b>01</b>
+
+            <span>
+              <strong>Capture</strong>
+              Bring the right customer, request and business
+              data together.
+            </span>
+          </div>
+
+          <div>
+            <b>02</b>
+
+            <span>
+              <strong>Automate</strong>
+              Route work, trigger actions and remove manual
+              follow-ups.
+            </span>
+          </div>
+
+          <div>
+            <b>03</b>
+
+            <span>
+              <strong>Improve</strong>
+              Use clear insights to make every process
+              work better.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       OUTCOMES
+  ============================================================ -->
+  <section class="outcomes-section">
+
+    <div class="platform-container">
+
+      <div class="outcomes-intro">
+
+        <p class="platform-eyebrow">
+          <span></span>
+          Designed for momentum
+        </p>
+
+        <h2>
+          Everything connects.
+          <br>
+          <em>Everyone moves.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="outcomes-grid">
+
+        <article>
+
+          <span class="outcome-icon">
+            ⌁
+          </span>
+
+          <h3>
+            One view of your business
+          </h3>
+
+          <p>
+            See customer activity, team workloads and
+            operational progress in a single live workspace.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <span class="outcome-icon">
+            ⌘
+          </span>
+
+          <h3>
+            Workflows that work for you
+          </h3>
+
+          <p>
+            Configure your platform around how your business
+            actually operates - not the other way around.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <span class="outcome-icon">
+            ◌
+          </span>
+
+          <h3>
+            Built-in intelligence
+          </h3>
+
+          <p>
+            Surface the details that matter, spot bottlenecks
+            and make confident decisions sooner.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="platform-cta">
+
+    <div class="platform-container">
+
+      <div class="platform-cta-card">
+
+        <div>
+
+          <p class="platform-eyebrow">
+            <span></span>
+            Make work flow better
+          </p>
+
+          <h2>
+            Ready to see CAPS-AI
+            <br>
+            in <em>your business?</em>
+          </h2>
+
+        </div>
+
+
+        <div class="cta-side">
+
+          <p>
+            See how a connected platform can simplify your
+            next stage of growth.
+          </p>
+
+          <a routerLink="/contact" class="platform-button platform-button-primary">
+            Talk to our team
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>

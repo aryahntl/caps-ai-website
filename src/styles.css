@@ -54,7 +54,7 @@
 
   /* Layout */
   --container: 1240px;
-  --section-padding: 120px;
+  --section-padding: 88px;
 
   /* Motion */
   --ease:
@@ -320,7 +320,7 @@ p {
 @media (max-width: 900px) {
 
   :root {
-    --section-padding: 80px;
+    --section-padding: 64px;
   }
 
 }
@@ -336,7 +336,7 @@ p {
   }
 
   :root {
-    --section-padding: 64px;
+    --section-padding: 48px;
   }
 
   h1 {
